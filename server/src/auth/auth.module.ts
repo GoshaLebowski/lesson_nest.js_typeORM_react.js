@@ -20,6 +20,7 @@ import {JwtStrategy} from "./strategy/jwt.strategy";
             }),
             inject: [ConfigService],
         })
+
     ],
     controllers: [AuthController],
     providers: [AuthService, LocalStrategy, JwtStrategy],

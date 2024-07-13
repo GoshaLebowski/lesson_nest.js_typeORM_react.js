@@ -89,4 +89,15 @@ export class TransactionService {
             skip: (page - 1) * limit
         })
     }
+
+    async findAllByType(id: string, type: string) {
+        const transaction = await this.transactionRepository.find({
+            where: {
+                user: {id},
+                type,
+            }
+        })
+
+        return transaction.reduce((acc, obj) => acc + obj.amount, 0)
+    }
 }

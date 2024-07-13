@@ -20,15 +20,19 @@ export class UserService {
                 email: createUserDto.email,
             }
         })
+
         if (exist) throw new BadRequestException('This email is already exist!');
+
         const user = await this.userRepository.save({
             email: createUserDto.email,
             password: await argon2.hash(createUserDto.password),
         })
 
-        const token = this.jwtService.sign({email: createUserDto.email})
+        const token = this.jwtService.sign({id: user.id, email: user.email})
 
-        return {user}
+        if (user) {delete user.password}
+
+        return {user, token}
     }
 
     async findOne(email: string) {
