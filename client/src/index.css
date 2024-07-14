@@ -22,8 +22,9 @@
     }
 
     .input {
-        @apply bg-transparent p-2 border bg-slate-700 placeholder:text-white border-slate-800 rounded-md outline-none focus:border-slate-300;
+        @apply rounded-md border border-slate-800 bg-slate-700 bg-transparent p-2 outline-none placeholder:text-white focus:border-slate-300 placeholder:text-sm;
     }
+
     .container {
         @apply max-w-[1000px]
     }
@@ -33,6 +34,7 @@
     .btn-red {
         @apply bg-rose-900 hover:bg-rose-800
     }
+
     .btn-green {
         @apply bg-green-600 hover:bg-green-800
     }
