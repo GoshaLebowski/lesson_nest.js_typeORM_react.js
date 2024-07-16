@@ -3,7 +3,7 @@ import Layout from '../pages/Layout.tsx'
 import ErrorPage from '../pages/ErrorPage.tsx'
 import Home from '../pages/Home.tsx'
 import Transactions from '../pages/Transactions.tsx'
-import Categories from '../pages/Categories.tsx'
+import Categories, { categoriesAction, categoryLoader } from '../pages/Categories.tsx'
 import Auth from '../pages/Auth.tsx'
 import { ProtectedRoute } from '../components/ProtectedRoute.tsx'
 
@@ -26,6 +26,8 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'categories',
+				action: categoriesAction,
+				loader: categoryLoader,
 				element:
 					<ProtectedRoute>
 						<Categories/>
