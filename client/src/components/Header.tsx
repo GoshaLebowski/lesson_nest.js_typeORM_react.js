@@ -46,7 +46,7 @@ const Header: FC = () => {
 										isActive ? 'text-white' : 'text-white/50'
 									}
 								>
-									Transaction
+									Transactions
 								</NavLink>
 							</li>
 							<li>

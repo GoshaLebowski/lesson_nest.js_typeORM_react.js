@@ -28,3 +28,34 @@ export interface ICategory {
 	updatedAt: string
 	transactions: []
 }
+
+export interface ITransactionCreate {
+	title: string
+	amount: number
+	type: string
+	category: {
+		id: string
+	}
+}
+
+export interface ITransactionResponse {
+	id: string
+	title: string
+	type: string
+	amount: number
+	createdAt: string
+	updatedAt: string
+	category: {
+		id: string
+		title: string
+		createdAt: string
+		updatedAt: string
+	}
+}
+
+export interface IFormDataTransaction {
+	title: string
+	amount: number | ''
+	type: 'income' | 'expense' | ''
+	category: string,
+}

@@ -32,6 +32,9 @@ export class TransactionService {
 			where: {
 				user: { id }
 			},
+			relations: {
+				category: true
+			},
 			order: {
 				createdAt: 'DESC'
 			}
@@ -83,6 +86,9 @@ export class TransactionService {
 		return await this.transactionRepository.find({
 			where: {
 				user: { id }
+			},
+			relations: {
+				category: true
 			},
 			order: {
 				createdAt: 'DESC'

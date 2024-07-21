@@ -6,9 +6,9 @@ import {
     ManyToOne,
     PrimaryGeneratedColumn,
     UpdateDateColumn
-} from "typeorm";
-import {User} from "../../user/entities/user.entity";
-import {Category} from "../../category/entities/category.entity";
+} from 'typeorm'
+import { User } from '../../user/entities/user.entity'
+import { Category } from '../../category/entities/category.entity'
 
 @Entity()
 export class Transaction {
@@ -25,7 +25,9 @@ export class Transaction {
     @JoinColumn({name: 'user_id'})
     user: User
 
-    @ManyToOne(() => Category, (category) => category.transactions)
+    @ManyToOne(() => Category, (category) => category.transactions, {
+        onDelete: 'SET NULL'
+    })
     @JoinColumn({name: 'category_id'})
     category: Category
 

@@ -22,7 +22,7 @@
     }
 
     .input {
-        @apply rounded-md border border-slate-800 bg-slate-700 bg-transparent p-2 outline-none placeholder:text-white focus:border-slate-300 placeholder:text-sm;
+        @apply rounded-md border border-slate-800 bg-slate-900 p-2 placeholder:text-white focus:border-slate-300 placeholder:text-sm;
     }
 
     .container {
